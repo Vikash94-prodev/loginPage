@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login {
+        /* width: 70vh; */
+        /* height: 70vh; */
+        background-color: rgba(255, 255, 255, .2);
+        margin-top: 25vh;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* border: 1px solid black; */
+    }
+
+    .input {
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+        margin: 0 2rem;
+        border-radius: 1em;
+        border: none;
+    }
+
+    #button {
+        cursor: pointer;
+        margin: 0 10rem;
+        padding: 0.7rem 1rem;
+        background-color: blue;
+        color: white;
+        font-weight: bolder;
+    }
+
+    .video {
+        position: fixed;
+        z-index: -1;
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    p {
+        cursor: pointer;
+        color: darkblue;
+    }
+
+    /* responsive design */
+    @media(max-width:405px) {
+        .input {
+            padding:5px 10px;
+            font-size: 10px;
+            margin: 0 30px;
+            border-radius: 5px;
+        }
+        .login{
+            width: 50vh;
+            gap: 10px;
+            margin-top: 30vh;
+        }
+        h1{
+            font-size: 20px;
+        }
+        
+    #button {
+        margin: 0 90px;
+        padding:5px;
+    }
+    p{
+        font-size: 10px;
+        color:red;
+    }
+    }
+</style>
+
+<body>
+    <video autoplay loop muted plays-inline class="video">
+        <source src="marine_-_20224 (720p).mp4">
+    </video>
+    <div class="container">
+        <div class="login">
+            <h1>Account Login</h1>
+            <input type="text" placeholder="Email or Contact number" class="input">
+            <input type="text" placeholder="password" class="input">
+            <button type="submit" class="input" id="button">Login</button>
+            <p>forget password</p>
+        </div>
+    </div>
+    <script>
+        let a = document.querySelector('.login')
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            a.innerHTML = "your account loged in successfully!"
+            a.style.color = "green"
+            a.style.height = "50vh"
+            a.style.width = "50vh"
+            a.style.fontSize = "30px"
+            a.style.fontWeight = "bolder"
+            a.style.background = "rgba(255,255,255,.5)"
+            a.style.padding = "30px"
+        })
+    </script>
+</body>
+
+</html>
